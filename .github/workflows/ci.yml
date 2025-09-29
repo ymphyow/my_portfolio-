@@ -18,10 +18,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build image
-        run: docker build -t ymphyow/my_portfolio- .
+        run: docker build ${{secrets.REGISTRY_USER}}/portfolio:${{github.run_number}} .
+             docker build -t ${{secrets.REGISTRY_USER}}/portfolio .
       
       - name: Push image 
         run: docker login -u ymphyow -p ${{secrets.REGISTRY_PASS}}
-             docker push ymphyow/my_portfolio-
+             docker push ymphyow/portfolio
 
     
