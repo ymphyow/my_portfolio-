@@ -23,7 +23,7 @@ jobs:
          
       
       - name: Push image 
-        run: 
+        run: |
             docker login -u ymphyow -p ${{secrets.REGISTRY_PASS}}
             docker push ymphyow/portfolio
 
